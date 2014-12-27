@@ -6,12 +6,29 @@
           <%= f.text_field :name %>
      </div>
      <div class="field">
-          <%= f.label :url %><br />
-          <%= f.text_field :url %>
+          <% if @image.info? %>
+               <div class="thumbnail">
+                    <%= image_tag @image.info.url %>
+               </div>
+          <% end %>
+          <%= f.label :info %><br />
+          <%= f.file_field :info %>
+          <%= f.hidden_field :info_cache %>
+     </div>
+     <div class="field">
+          <!-- 既存レコード（DBに保存されている）かつ、画像が存在する場合 -->
+          <% if @image.persisted? && @image.info? %>
+               <label>
+                    <%= f.check_box :remove_image %>
+                    画像を削除
+               </label>
+          <% end %>
      </div>
      <div class="actions">
           <%= f.submit %>
      </div>
 <% end %>
+
 <img src="http://tiqav.com/2Zc.jpg" />
+
 <%= link_to 'Back', images_path %>

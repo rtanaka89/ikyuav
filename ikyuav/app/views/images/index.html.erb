@@ -1,18 +1,18 @@
-<h1>index</h1>
+<h1>ikyuav</h1>
 
-<table>
-     <thead>
-          <tr>
-               <th>名前</th>
-               <th>URL</th>
-          </tr>
-     </thead>
-     <tbody>
-          <% @images.each do |img| %>
-               <tr>
-                    <td><%= img.name %></td>
-                    <td><%= img.url %></td>
-               </tr>
+<%= link_to '新規追加', :controller => 'images', :action => 'new' %>
+
+<% @images.each do |img| %>
+     <p>
+          <strong>Name:</strong>
+          <%= img.name %>
+     </p>
+     <p>
+          <strong>Image:</strong>
+          <% if img.info? %>
+               <div class="thumbnail">
+                    <%= image_tag img.info.url %>
+               </div>
           <% end %>
-     </tbody>
-</table>
+     </p>
+<% end %>
