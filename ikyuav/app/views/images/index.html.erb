@@ -2,6 +2,7 @@
 
 <%= link_to '新規追加', :controller => 'images', :action => 'new' %>
 
+<!--
 <% @images.each do |img| %>
      <p>
           <strong>Name:</strong>
@@ -16,3 +17,9 @@
           <% end %>
      </p>
 <% end %>
+-->
+<div id="masonry-container">
+     <% @images.each do |img| %>
+     <div class="mas-box"><%= image_tag img.info.url %></div>
+     <% end %>
+</div>
