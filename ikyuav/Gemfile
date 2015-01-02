@@ -29,6 +29,13 @@ gem 'carrierwave'
 # image tile view
 gem 'masonry-rails', '~> 0.2.4'
 
+# bootstrap
+gem 'less-rails'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
