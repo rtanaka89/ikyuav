@@ -2,22 +2,6 @@
 
 <%= link_to '新規追加', :controller => 'images', :action => 'new' %>
 
-<!--
-<% @images.each do |img| %>
-     <p>
-          <strong>Name:</strong>
-          <%= img.name %>
-     </p>
-     <p>
-          <strong>Image:</strong>
-          <% if img.info? %>
-               <div class="thumbnail">
-                    <%= image_tag img.info.url %>
-               </div>
-          <% end %>
-     </p>
-<% end %>
--->
 <div id="masonry-container">
      <% @images.each do |img| %>
      <div class="mas-box"><%= image_tag img.info.url %></div>
