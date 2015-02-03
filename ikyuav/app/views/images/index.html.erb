@@ -4,6 +4,8 @@
 
 <div id="masonry-container">
      <% @images.each do |img| %>
-     <div class="mas-box"><%= image_tag img.info.url %></div>
+     <div class="mas-box">
+       <%= link_to image_tag(img.info.url), :controller => 'images', :action => 'show', :id => img.id %>
+     </div>
      <% end %>
 </div>

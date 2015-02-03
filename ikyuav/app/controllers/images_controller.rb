@@ -17,6 +17,10 @@ class ImagesController < ApplicationController
           end
      end
 
+     def show
+          @image = Image.where(["id = ?", params[:id]]).first
+     end
+
      private
      def image_params
           params.require(:image).permit(:name, :info, :info_cache, :remove_image)
