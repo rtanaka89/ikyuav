@@ -1,7 +1,29 @@
 <h1>show</h1>
 
 <div>
-    <%= image_tag @image.info.url %>
+  <%= image_tag @image.info.url %>
+</div>
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          <%= label_tag 'image', 'Images :' %>
+        </th>
+        <td>
+          <%= text_field_tag 'image', @imageUrl, :size => '50', :readonly => 'true' %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <%= label_tag 'markdown', 'Markdown :' %>
+        </th>
+        <td>
+          <%= text_field_tag 'markdown', @imageMarkdown, :size => '50', :readonly => 'true' %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to 'Back', images_path %>

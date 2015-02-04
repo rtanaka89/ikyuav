@@ -19,6 +19,8 @@ class ImagesController < ApplicationController
 
      def show
           @image = Image.where(["id = ?", params[:id]]).first
+          @imageUrl = request.protocol + request.host_with_port + @image.info.url
+          @imageMarkdown = '![' + @image.name + '](' + @imageUrl + ')'
      end
 
      private
