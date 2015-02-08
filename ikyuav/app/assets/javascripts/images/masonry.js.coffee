@@ -1,7 +1,8 @@
 $(window).load ->
     $('#masonry-container').masonry
         itemSelector: '.mas-box',
-        gutterWidth: 50,
+        columnWidth: 300,
+        gutterWidth: 20,
         isAnimated: true,
         animationOptions: {
             duration: 500,
